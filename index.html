@@ -72,7 +72,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="./index3.html" class="brand-link">
+    <a href="index.html" class="brand-link">
       <img src="./dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">Admin panel</span>
     </a>
@@ -171,9 +171,9 @@
                     <td>juan@gamil.com</td>
                     <td style="width: 1rem;">
                       <div class="btn-group">
-                        <button type="button" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></button>
-                        <button type="button" class="btn btn-warning btn-sm"><i class="fa fa-user-edit"></i></button>
-                        <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></button>
+                        <a href="view-user.html" class="btn btn-info btn-sm"><i class="fa fa-eye"></i></a>
+                        <a href="edit-user.html" class="btn btn-warning btn-sm"><i class="fa fa-user-edit"></i></a>
+                        <a class="btn btn-danger btn-sm delete-button"><i class="fa fa-trash"></i></a>
                       </div>
                     </td>
                   </tr>
@@ -354,9 +354,6 @@
 <script src="./plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <script src="./plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 <script src="./plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-<script src="./plugins/jszip/jszip.min.js"></script>
-<script src="./plugins/pdfmake/pdfmake.min.js"></script>
-<script src="./plugins/pdfmake/vfs_fonts.js"></script>
 <script src="./plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="./plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="./plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
@@ -373,6 +370,13 @@
       "responsive": true,
       "autoWidth": false,
     });
+    $('.delete-button').on('click', event =>{
+      if(confirm('¿Seguro desea eleminar este usuario?')){
+        alert('Se a ejecutado la eliminación');
+      }else {
+        alert('Se ha cancelado la eliminación');
+      }
+    })
   });
 </script>
 </body>
